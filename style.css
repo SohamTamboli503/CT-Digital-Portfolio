@@ -1,0 +1,146 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    line-height: 1.6;
+    background-color: #ffffff;
+    color: #000000;
+}
+
+/* Header & Nav */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 8%;
+    background: #fff;
+    border-bottom: 1px solid #eee;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo { font-size: 1.5rem; font-weight: 800; }
+
+nav a {
+    text-decoration: none;
+    color: #000;
+    margin-left: 20px;
+    font-weight: 500;
+    font-size: 0.9rem;
+}
+
+.nav-btn {
+    background: #000;
+    color: #fff !important;
+    padding: 8px 18px;
+    border-radius: 6px;
+}
+
+/* Hero Section */
+#hero {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 60px 8%;
+    min-height: 80vh;
+    gap: 40px;
+}
+
+.hero-content { flex: 1.2; }
+.hero-content h1 { font-size: clamp(2.5rem, 5vw, 3.5rem); font-weight: 800; line-height: 1.1; margin-bottom: 15px; }
+.hero-content h1 span { display: block; color: #444; }
+.hero-content h2 { font-size: 1.6rem; margin-bottom: 20px; }
+.hero-content p { color: #666; max-width: 520px; margin-bottom: 30px; }
+
+.social-links a {
+    margin-right: 20px;
+    color: #000;
+    text-decoration: none;
+    font-weight: 700;
+    border-bottom: 2px solid #000;
+    transition: 0.3s;
+}
+
+.hero-image { flex: 0.8; }
+.hero-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 20px;
+    box-shadow: 20px 20px 0px #f0f0f0;
+    border: 1px solid #eee;
+}
+
+/* Section Styling */
+section { padding: 80px 8%; }
+.section-title { text-align: center; margin-bottom: 50px; }
+.section-title h2 { font-size: 2.5rem; font-weight: 800; }
+.about-container { max-width: 800px; margin: 0 auto; text-align: center; }
+
+/* --- SYMMETRICAL SKILLS LAYOUT (5 on top, 4 on bottom) --- */
+.skills-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Centers the bottom row */
+    gap: 20px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.skill-card {
+    /* Calculates width for 5 per row */
+    flex: 0 1 calc(18%); 
+    min-width: 170px;
+    height: 170px; 
+    border: 2px solid #000;
+    border-radius: 12px;
+    
+    /* Perfect Centering */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 20px;
+    
+    /* Font Styling */
+    font-size: 1.2rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+}
+
+.skill-card:hover {
+    background: #000;
+    color: #fff;
+    transform: translateY(-8px);
+}
+
+/* Projects */
+.projects-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+}
+
+.project-card { border: 1px solid #eee; padding: 40px; border-radius: 20px; transition: 0.3s; }
+.project-card.dark { background: #000; color: #fff; }
+.project-card a { display: inline-block; margin-top: 15px; color: inherit; font-weight: 700; text-decoration: none; border-bottom: 2px solid; }
+
+/* Footer */
+footer { text-align: center; padding: 60px 8%; background: #fafafa; border-top: 1px solid #eee; }
+footer a { color: #000; font-weight: 600; text-decoration: none; }
+
+/* Responsive View */
+@media (max-width: 950px) {
+    .skill-card { flex: 0 1 45%; height: 140px; } /* 2 per row on smaller screens */
+    #hero { flex-direction: column-reverse; text-align: center; }
+}
